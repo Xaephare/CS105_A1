@@ -2,7 +2,7 @@
 #include <vector>
 #include "includes.h" //header of headers
 
-int Yacht::objCount = 0;
+int Yacht::objCount = 0; //initialize obj count at 0
 
 int main() {
 	std::vector<Yacht> yacht; //vector of Yacht objects so that you can create any amount
