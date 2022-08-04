@@ -1,31 +1,18 @@
 #include <iostream>
-#include "Location.h"
+#include "location.h"
+#include "yacht.h"
 
 
-class Yacht {
-private:
-	int serial;
-	static int objCount;
-	
-public:
-	Yacht() {
-		objCount++;
-		serial = objCount;
-		Location longitude,latitude;
-		latitude.GetPos(serial);
-	}
-	~Yacht() {
-		objCount--;
-	}
-	static int getObjCount() {
-		return objCount;
-	}
-};
+Yacht::Yacht() {
+	objCount++;
+	serial = objCount;
 
-int Yacht::objCount = 0;
+	std::cout << "*****************************\n";
+	std::cout << "Enter the location of ship " << this->serial << std::endl;
+	latitude.getPos();
+	longitude.getPos();
+}
 
-int main() {
-	Yacht yacht;
-	std::cout << Yacht::getObjCount();
-	return 0;
+int Yacht::getObjCount() {
+	return objCount;
 }

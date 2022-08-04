@@ -7,6 +7,6 @@ private:
 	float minutes;
 	char direction;
 public:
-	void GetPos(int yachtCnt);
-protected:
+	void getPos();
+	void display();
 };
