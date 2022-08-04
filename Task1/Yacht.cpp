@@ -8,7 +8,7 @@ Yacht::Yacht() {
 	serial = objCount;
 
 	std::cout << "*****************************\n";
-	std::cout << "Enter the location of ship " << this->serial << std::endl;
+	std::cout << "Enter the location of ship " << serial << std::endl;
 	latitude.getPos();
 	longitude.getPos();
 }
