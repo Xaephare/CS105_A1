@@ -2,13 +2,13 @@
 #include "shapes.h"
 
 Shapes::Shapes() {
-	calc_result = 0;
+	calc_result, height, width, radius = 0;
 }
 
 
 double Shapes::calculate_area(double heightwidth) {
 	double result = 0;
-	result = heightwidth * heightwidth;
+	result = heightwidth * heightwidth; //it's a square
 	set_result(result);
 	return result;
 }
@@ -20,12 +20,16 @@ double Shapes::calculate_area(double height, double width) { //overloaded functi
 	return result;
 }
 
+double Shapes::calculate_perimeter() {
+	//needs to be implemented in the child classes and defined here!!!
+}
+
 void Shapes::set_result(double input) {
 	calc_result = input;
 }
 
 double Shapes::get_data() {
-	return calc_result;
+	std::cout << "";
 }
 
 void Shapes::give_result() {
