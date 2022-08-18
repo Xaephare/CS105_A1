@@ -1,27 +1,32 @@
 #include <iostream>
+#include <cmath>
 #include "shapes.h"
 
 Shapes::Shapes() {
-	calc_result, height, width, radius = 0;
+	calc_result = height = width = radius = 0;
 }
 
+//cm\xFD"/*^2 symbol*/
 
-double Shapes::calculate_area(double heightwidth) {
+double Shapes::calculate_area(double radius) { //single argument for circle, this would be in the circle sub-class but i must show off overloading.
 	double result = 0;
-	result = heightwidth * heightwidth; //it's a square
+	result = pi * (radius * radius);
 	set_result(result);
 	return result;
 }
 
-double Shapes::calculate_area(double height, double width) { //overloaded function for rectangles
+double Shapes::calculate_area(double height, double width) { //overloaded function for rectangles and squares
 	double result = 0;
 	result = height * width;
 	set_result(result);
 	return result;
 }
 
-double Shapes::calculate_perimeter() {
-	//needs to be implemented in the child classes and defined here!!!
+double Shapes::calculate_perimeter(double height, double width) {
+	double result = 0;
+	result = height * 2 + width * 2;
+	set_result(result);
+	return result;
 }
 
 void Shapes::set_result(double input) {
@@ -29,13 +34,14 @@ void Shapes::set_result(double input) {
 }
 
 double Shapes::get_data() {
-	std::cout << "";
+	double input = 0;
+	std::cin >> input;
+	return input;
 }
 
 void Shapes::give_result() {
-	std::cout << "The area of the shape is: " << get_data() << "cm\xFD"/*^2 symbol*/ << " (centimeters squared)" << std::endl;
+	std::cout << calc_result << std::endl;
 }
-
 
 //derived class function overriding
 void Square::draw_shape() {
@@ -70,9 +76,19 @@ void Triangle::draw_shape() {
 		std::cout << std::endl;
 	}
 }
+
 double Triangle::calculate_area(double height, double width) {
 	double result = 0;
 	result = (height * width) / 2; //right angle triangle
+	set_result(result);
+	return result;
+}
+
+double Triangle::calculate_perimeter(double height, double width) {
+	double result, hypot = 0;
+	hypot = (height * height) + (width * width);
+	hypot = sqrt(hypot);
+	result = height + width + hypot;
 	set_result(result);
 	return result;
 }
@@ -87,9 +103,9 @@ void Circle::draw_shape() {
 		"     * * *\n";
 }
 
-double Circle::calculate_area(double radius) {
+double Circle::calculate_perimeter(double radius) {
 	double result = 0;
-	result = pi * (radius * radius);
+	result = 2 * pi * radius;
 	set_result(result);
 	return result;
 }

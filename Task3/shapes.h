@@ -9,9 +9,10 @@ private:
 public:
 	Shapes();
 	virtual void draw_shape() = 0;
-	double calculate_perimeter();
+	double calculate_perimeter(double height, double width);
+	double calculate_perimeter(double radius);
 	double calculate_area(double height, double width);
-	double calculate_area(double heightwidth);
+	double calculate_area(double radius);
 	void give_result();
 	double get_data();
 	void set_result(double input);
@@ -31,11 +32,10 @@ class Triangle : public Shapes {
 public:
 	void draw_shape();
 	double calculate_area(double height, double width);
-	double calculate_perimeter();
+	double calculate_perimeter(double height, double width);
 };
 class Circle : public Shapes {
 public:
 	void draw_shape();
-	double calculate_area(double diameter);
-	double calculate_perimeter();
+	double calculate_perimeter(double radius);
 };
