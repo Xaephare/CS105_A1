@@ -6,7 +6,6 @@ Shapes::Shapes() {
 	calc_result = height = width = radius = 0;
 }
 
-//cm\xFD"/*^2 symbol*/
 
 double Shapes::calculate_area(double radius) { //single argument for circle, this would be in the circle sub-class but i must show off overloading.
 	double result = 0;
@@ -40,7 +39,7 @@ double Shapes::get_data() {
 }
 
 void Shapes::give_result() {
-	std::cout << calc_result << std::endl;
+	std::cout << calc_result;
 }
 
 //derived class function overriding

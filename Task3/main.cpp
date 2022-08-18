@@ -13,30 +13,43 @@ void area() {
 	Triangle t;
 	switch (shape_sel) {
 	case SQUARE:
-		std::cout << "Please enter the base length of the square in cm: \n";
+		std::cout << "Please enter the base length of the square in cm: ";
 		width = s.get_data();
 		s.calculate_area(width, width); //squares are equal, only one value needed
+		std::cout << "\nThe result is: ";
+		s.give_result();
+		std::cout << "cm\xFD\n"; /*^2 symbol*/
 		break;
 	case RECTANGLE:
-		std::cout << "Please enter the height of the rectangle in cm: \n";
+		std::cout << "Please enter the height of the rectangle in cm: ";
 		height = r.get_data();
-		std::cout << "Please enter the width of the rectangle in cm: \n";
+		std::cout << "Please enter the width of the rectangle in cm: ";
 		width = r.get_data();
 		r.calculate_area(height, width);
+		std::cout << "\nThe result is: ";
+		r.give_result();
+		std::cout << "cm\xFD\n"; /*^2 symbol*/
 		break;
 	case TRIANGLE:
-		std::cout << "Please enter the height of the triangle in cm: \n";
+		std::cout << "Please enter the height of the triangle in cm: ";
 		height = t.get_data();
-		std::cout << "Please enter the width of the triangle in cm: \n";
+		std::cout << "Please enter the width of the triangle in cm: ";
 		width = t.get_data();
 		t.calculate_area(height, width);
+		std::cout << "\nThe result is: ";
+		t.give_result();
+		std::cout << "cm\xFD\n"; /*^2 symbol*/
 		break;
 	case CIRCLE:
-		std::cout << "Please enter the radius of the circle in cm: \n";
+		std::cout << "Please enter the radius of the circle in cm: ";
 		radius = c.get_data();
 		c.calculate_area(radius);
+		std::cout << "\nThe result is: ";
+		c.give_result();
+		std::cout << "cm\xFD\n"; /*^2 symbol*/
 		break;
 	}
+	std::cout << std::endl;
 }
 
 void perimeter() {
@@ -47,30 +60,43 @@ void perimeter() {
 	Triangle t;
 	switch (shape_sel) {
 	case SQUARE:
-		std::cout << "Please enter the width of the square in cm: \n";
+		std::cout << "Please enter the width of the square in cm: ";
 		width = s.get_data();
 		s.calculate_perimeter(width, width); //squares are equal, only one value needed
+		std::cout << "\nThe result is: ";
+		s.give_result();
+		std::cout << "cm\n";
 		break;
 	case RECTANGLE:
-		std::cout << "Please enter the height of the rectangle in cm: \n";
+		std::cout << "Please enter the height of the rectangle in cm: ";
 		height = r.get_data();
-		std::cout << "Please enter the width of the rectangle in cm: \n";
+		std::cout << "Please enter the width of the rectangle in cm: ";
 		width = r.get_data();
 		r.calculate_perimeter(height, width);
+		std::cout << "\nThe result is: ";
+		r.give_result();
+		std::cout << "cm\n";
 		break;
 	case TRIANGLE:
-		std::cout << "Please enter the height of the triangle in cm: \n";
+		std::cout << "Please enter the height of the triangle in cm: ";
 		height = t.get_data();
-		std::cout << "Please enter the width of the triangle in cm: \n";
+		std::cout << "Please enter the width of the triangle in cm: ";
 		width = t.get_data();
 		t.calculate_perimeter(height, width);
+		std::cout << "\nThe result is: ";
+		t.give_result();
+		std::cout << "cm\n";
 		break;
 	case CIRCLE:
-		std::cout << "Please enter the radius of the circle in cm: \n";
+		std::cout << "Please enter the radius of the circle in cm: ";
 		radius = c.get_data();
 		c.calculate_perimeter(radius);
+		std::cout << "\nThe result is: ";
+		c.give_result();
+		std::cout << "cm\n";
 		break;
 	}
+	std::cout << std::endl;
 }
 
 void title_display() {
@@ -122,9 +148,11 @@ void menu_2() {
 	switch (sel) {
 	case 1:
 		area();
+		menu_2();
 		break;
 	case 2:
 		perimeter();
+		menu_2();
 		break;
 	case 3:
 		main_menu();
@@ -167,7 +195,9 @@ int main() {
 	Circle cir;
 	Triangle tri;
 
-	main_menu();
+	while (shape_sel != 5) {
+		main_menu();
+	}
 	
 	return 0;
 }
