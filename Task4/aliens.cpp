@@ -40,7 +40,6 @@ Alien Alien::operator+(Alien& other) {
 
 	char new_gender;
 	int rand_binary = rand() % 2;
-	std::cout << rand_binary;
 
 	int new_weight = (weight + other.weight) / 2;
 	int new_height = (height + other.height) / 2;

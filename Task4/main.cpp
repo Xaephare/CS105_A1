@@ -38,14 +38,13 @@ void compare_offspring() {
 		std::cout << "Not enough offspring to compare.\n\n";
 	}
 	else {
+		std::cout << "Alien offspring prestige comparison:\n";
 		std::cout << "Alien5 == Alien6 ? " << std::boolalpha << (offspring[0] == offspring[1]) << std::endl;
 		std::cout << "Alien5 != Alien6 ? " << std::boolalpha << (offspring[0] != offspring[1]) << std::endl;
 		std::cout << "Alien5 > Alien6 ? " << std::boolalpha << (offspring[0] > offspring[1]) << std::endl;
 		std::cout << "Alien5 >= Alien6 ? " << std::boolalpha << (offspring[0] >= offspring[1]) << std::endl;
 		std::cout << "Alien5 < Alien6 ? " << std::boolalpha << (offspring[0] < offspring[1]) << std::endl;
-		std::cout << "Alien5 <= Alien6 ? " << std::boolalpha << (offspring[0] <= offspring[1]) << std::endl;
-
-		std::cout << offspring[0].get_gender() << offspring[1].get_gender() << std::endl;
+		std::cout << "Alien5 <= Alien6 ? " << std::boolalpha << (offspring[0] <= offspring[1]) << std::endl << std::endl;
 	}
 }
 
